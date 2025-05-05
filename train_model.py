@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 import joblib
 
 # Veri setini yükle
-df = pd.read_csv("data/agrovision_ai_veriseti.csv").head(1800)
+df = pd.read_csv("agrovision_ai_veriseti.csv").head(1800)
 
 # Kategorik verileri encode et
 le_urun = LabelEncoder()
