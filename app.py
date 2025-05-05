@@ -121,7 +121,7 @@ import os
 
 @st.cache_data
 def load_data():
-    file_path = "data/agrovision_ai_veriseti.csv"
+    file_path = "agrovision_ai_veriseti.csv"
     if not os.path.exists(file_path):
         st.error(f"Hata: Dosya bulunamadı - {file_path}")
         # Uygulamayı durdurabilir veya başka bir işlem yapabilirsiniz
