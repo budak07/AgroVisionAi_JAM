@@ -8,9 +8,18 @@ st.title("🌾 AgroVision AI – Akıllı Tarım Danışmanı")
 # Veriyi yükle (sadece dropdown'lar için)
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/agrovision_ai_veriseti.csv").head(1800)  # train_model.py ile uyumlu yol
-
-df = load_data()
+    file_path = "data/agrovision_ai_veriseti.csv"
+    if not os.path.exists(file_path):
+        st.error(f"Hata: Dosya bulunamadı - {file_path}")
+        # Uygulamayı durdurabilir veya başka bir işlem yapabilirsiniz
+        st.stop() # Streamlit uygulamasını durdurur
+        # veya raise FileNotFoundError(f"Dosya bulunamadı: {file_path}") # Daha teknik bir hata fırlatır
+    try:
+        df = pd.read_csv(file_path).head(1800)
+        return df
+    except Exception as e:
+        st.error(f"Dosya okunurken bir hata oluştu: {e}")
+        st.stop()
 
 # Model ve encoder'ları yükle
 model = joblib.load("agrovision_model.pkl")
