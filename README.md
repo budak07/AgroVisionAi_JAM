@@ -55,3 +55,5 @@ IoT cihazlarıyla entegrasyon (ör. toprak nem sensörleri).
 
 
 Katkılarınızı bekliyoruz! Lütfen  dosyasını inceleyin ve pull request gönderin.
+
+Not:Yandaki  linkten  yapmış olduğumuz projeyi test edebilirsiniz (https://agrovisionaijam.streamlit.app)
